@@ -1,12 +1,14 @@
 import 'dart:convert';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 import '../Model/response_model.dart';
 
 class SignInApiService {
-  final String _baseUrl = 'https://apptest.dokandemo.com/wp-json/jwt-auth/v1/token';
+
 
   Future<Map<String, dynamic>> authenticateUser(String username, String password) async {
+    final String _baseUrl = 'https://apptest.dokandemo.com/wp-json/jwt-auth/v1/token';
     final url = Uri.parse(_baseUrl);
 
     final response = await http.post(
@@ -28,14 +30,9 @@ class SignInApiService {
   }
 
   Future<List<Product>> fetchProducts() async {
-    final response = await http.get(Uri.parse('assets/response/response.json'));
-
-    if (response.statusCode == 200) {
-      List<dynamic> jsonList = json.decode(response.body);
-      return Product.fromJsonList(jsonList);
-    } else {
-      throw Exception('Failed to load products');
-    }
+    final String response = await rootBundle.loadString('assets/response/response.json');
+    List<dynamic> jsonList = json.decode(response);
+    return Product.fromJsonList(jsonList);
   }
 
 

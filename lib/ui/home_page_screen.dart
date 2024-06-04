@@ -1,4 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:dokan/ui/productListScreen.dart';
+import 'package:dokan/ui/profile_Screen.dart';
 import 'package:flutter/material.dart';
 
 import '../test.dart';
@@ -12,11 +14,11 @@ class BottomNavigationScreen extends StatefulWidget {
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   int _selectedIndex = 2;
   static  List<Widget> _screens = <Widget>[
-    ProductListScreen(),
     ScreenTwo(),
     ScreenThree(),
+    ProductListScreen(),
     ScreenFour(),
-    ScreenFive(),
+    AccountScreen(),
   ];
 
   void _onItemTapped(int index) {
