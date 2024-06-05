@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../test.dart';
 
-
 class BottomNavigationScreen extends StatefulWidget {
   @override
   _BottomNavigationScreenState createState() => _BottomNavigationScreenState();
@@ -13,7 +12,7 @@ class BottomNavigationScreen extends StatefulWidget {
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   int _selectedIndex = 2;
-  static  List<Widget> _screens = <Widget>[
+  static List<Widget> _screens = <Widget>[
     ScreenTwo(),
     ScreenThree(),
     ProductListScreen(),
@@ -26,6 +25,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       _selectedIndex = index;
     });
   }
+
   int _page = 0;
 
   @override
@@ -36,14 +36,31 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           index: _selectedIndex,
           backgroundColor: Colors.transparent,
           buttonBackgroundColor: Color(0xFFF75F55),
-        
           animationDuration: const Duration(milliseconds: 300),
-          items:  <Widget>[
-            Container(height: 56,child: Image.asset("assets/NavigationBar/home.png"),),
-            Container(height: 56,child: Image.asset("assets/NavigationBar/Com.png"),),
-            Container(height: 56,child: Image.asset("assets/NavigationBar/search.png",height: 26,),),
-            Container(height: 56,child: Image.asset("assets/NavigationBar/cartt.png"),),
-            Container(height: 56,child: Image.asset("assets/NavigationBar/prof.png"),),
+          items: <Widget>[
+            Container(
+              height: 56,
+              child: Image.asset("assets/NavigationBar/home.png"),
+            ),
+            Container(
+              height: 56,
+              child: Image.asset("assets/NavigationBar/Com.png"),
+            ),
+            Container(
+              height: 56,
+              child: Image.asset(
+                "assets/NavigationBar/search.png",
+                height: 26,
+              ),
+            ),
+            Container(
+              height: 56,
+              child: Image.asset("assets/NavigationBar/cartt.png"),
+            ),
+            Container(
+              height: 56,
+              child: Image.asset("assets/NavigationBar/prof.png"),
+            ),
           ],
           onTap: _onItemTapped,
         ),

@@ -31,9 +31,13 @@ class SignInApiService {
 
   Future<List<Product>> fetchProducts() async {
     final String response = await rootBundle.loadString('assets/response/response.json');
-    List<dynamic> jsonList = json.decode(response);
-    return Product.fromJsonList(jsonList);
+    // List<dynamic> jsonList = json.decode(response);
+    // return Product.fromJsonList(jsonList);
+    List<dynamic> body = json.decode(response);
+    List<Product> products = body.map((dynamic item) => Product.fromJson(item)).toList();
+    return products;
   }
+
 
 
 
