@@ -90,7 +90,7 @@ class CustomTexFormField extends StatelessWidget {
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffix: suffix,
-         suffixIconConstraints: suffixConstraints,
+        suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding: contentPadding ??
             EdgeInsets.only(

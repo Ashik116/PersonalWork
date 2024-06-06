@@ -3,7 +3,6 @@ import 'package:dokan/ui/productListScreen.dart';
 import 'package:dokan/ui/profile_Screen.dart';
 import 'package:flutter/material.dart';
 
-
 class BottomNavigationScreen extends StatefulWidget {
   @override
   _BottomNavigationScreenState createState() => _BottomNavigationScreenState();

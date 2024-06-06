@@ -1,4 +1,3 @@
-
 import 'package:dokan/widget/customExpansionTile.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +7,9 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
-  TextEditingController fullName= TextEditingController();
+  TextEditingController fullName = TextEditingController();
 
-  String? userFullNname="Ashik Rahman";
+  String? userFullNname = "Ashik Rahman";
 
   @override
   Widget build(BuildContext context) {
@@ -71,33 +70,41 @@ class _AccountScreenState extends State<AccountScreen> {
                                 child: Text(
                                   "Email",
                                   style: TextStyle(
-                                    color: Colors.grey.withOpacity(0.5), // Match the label color
+                                    color: Colors.grey.withOpacity(
+                                        0.5), // Match the label color
                                   ),
                                 ),
                               ),
                               SizedBox(height: 5),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white, // Background color for the TextFormField
-                                  borderRadius: BorderRadius.circular(5), // Rounded corners
+                                  color: Colors
+                                      .white, // Background color for the TextFormField
+                                  borderRadius: BorderRadius.circular(
+                                      5), // Rounded corners
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black26, // Shadow color
                                       blurRadius: 5, // Blur radius
-                                      offset: Offset(0, 2), // Offset in x and y direction
+                                      offset: Offset(
+                                          0, 2), // Offset in x and y direction
                                     ),
                                   ],
                                 ),
                                 child: TextFormField(
-
                                   decoration: InputDecoration(
                                     hintText: 'youremail@xmail.com',
-                                    hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey.withOpacity(0.5)),
                                     border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10), // Rounded corners for the TextFormField
+                                      borderRadius: BorderRadius.circular(
+                                          10), // Rounded corners for the TextFormField
                                       borderSide: BorderSide.none, // No border
                                     ),
-                                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Padding inside the TextFormField
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                        vertical:
+                                            12.0), // Padding inside the TextFormField
                                   ),
                                 ),
                               ),
@@ -107,20 +114,24 @@ class _AccountScreenState extends State<AccountScreen> {
                                 child: Text(
                                   "Full Name",
                                   style: TextStyle(
-                                    color: Colors.grey.withOpacity(0.5), // Match the label color
+                                    color: Colors.grey.withOpacity(
+                                        0.5), // Match the label color
                                   ),
                                 ),
                               ),
                               SizedBox(height: 5),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white, // Background color for the TextFormField
-                                  borderRadius: BorderRadius.circular(5), // Rounded corners
+                                  color: Colors
+                                      .white, // Background color for the TextFormField
+                                  borderRadius: BorderRadius.circular(
+                                      5), // Rounded corners
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black26, // Shadow color
                                       blurRadius: 5, // Blur radius
-                                      offset: Offset(0, 2), // Offset in x and y direction
+                                      offset: Offset(
+                                          0, 2), // Offset in x and y direction
                                     ),
                                   ],
                                 ),
@@ -128,12 +139,17 @@ class _AccountScreenState extends State<AccountScreen> {
                                   controller: fullName,
                                   decoration: InputDecoration(
                                     hintText: 'William Bennett',
-                                    hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey.withOpacity(0.5)),
                                     border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10), // Rounded corners for the TextFormField
+                                      borderRadius: BorderRadius.circular(
+                                          10), // Rounded corners for the TextFormField
                                       borderSide: BorderSide.none, // No border
                                     ),
-                                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Padding inside the TextFormField
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                        vertical:
+                                            12.0), // Padding inside the TextFormField
                                   ),
                                 ),
                               ),
@@ -143,32 +159,41 @@ class _AccountScreenState extends State<AccountScreen> {
                                 child: Text(
                                   "Street Address",
                                   style: TextStyle(
-                                    color: Colors.grey.withOpacity(0.5), // Match the label color
+                                    color: Colors.grey.withOpacity(
+                                        0.5), // Match the label color
                                   ),
                                 ),
                               ),
                               SizedBox(height: 5),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white, // Background color for the TextFormField
-                                  borderRadius: BorderRadius.circular(5), // Rounded corners
+                                  color: Colors
+                                      .white, // Background color for the TextFormField
+                                  borderRadius: BorderRadius.circular(
+                                      5), // Rounded corners
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black26, // Shadow color
                                       blurRadius: 5, // Blur radius
-                                      offset: Offset(0, 2), // Offset in x and y direction
+                                      offset: Offset(
+                                          0, 2), // Offset in x and y direction
                                     ),
                                   ],
                                 ),
                                 child: TextFormField(
                                   decoration: InputDecoration(
                                     hintText: '465 Nolan Causeway Suite 079',
-                                    hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey.withOpacity(0.5)),
                                     border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10), // Rounded corners for the TextFormField
+                                      borderRadius: BorderRadius.circular(
+                                          10), // Rounded corners for the TextFormField
                                       borderSide: BorderSide.none, // No border
                                     ),
-                                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Padding inside the TextFormField
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                        vertical:
+                                            12.0), // Padding inside the TextFormField
                                   ),
                                 ),
                               ),
@@ -178,32 +203,41 @@ class _AccountScreenState extends State<AccountScreen> {
                                 child: Text(
                                   "Apt, Suite, Bldg(optional)",
                                   style: TextStyle(
-                                    color: Colors.grey.withOpacity(0.5), // Match the label color
+                                    color: Colors.grey.withOpacity(
+                                        0.5), // Match the label color
                                   ),
                                 ),
                               ),
                               SizedBox(height: 5),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white, // Background color for the TextFormField
-                                  borderRadius: BorderRadius.circular(5), // Rounded corners
+                                  color: Colors
+                                      .white, // Background color for the TextFormField
+                                  borderRadius: BorderRadius.circular(
+                                      5), // Rounded corners
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black26, // Shadow color
                                       blurRadius: 5, // Blur radius
-                                      offset: Offset(0, 2), // Offset in x and y direction
+                                      offset: Offset(
+                                          0, 2), // Offset in x and y direction
                                     ),
                                   ],
                                 ),
                                 child: TextFormField(
                                   decoration: InputDecoration(
                                     hintText: 'Unit 512',
-                                    hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey.withOpacity(0.5)),
                                     border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10), // Rounded corners for the TextFormField
+                                      borderRadius: BorderRadius.circular(
+                                          10), // Rounded corners for the TextFormField
                                       borderSide: BorderSide.none, // No border
                                     ),
-                                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Padding inside the TextFormField
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                        vertical:
+                                            12.0), // Padding inside the TextFormField
                                   ),
                                 ),
                               ),
@@ -213,7 +247,8 @@ class _AccountScreenState extends State<AccountScreen> {
                                 child: Text(
                                   "Zip Code",
                                   style: TextStyle(
-                                    color: Colors.grey.withOpacity(0.5), // Match the label color
+                                    color: Colors.grey.withOpacity(
+                                        0.5), // Match the label color
                                   ),
                                 ),
                               ),
@@ -221,25 +256,33 @@ class _AccountScreenState extends State<AccountScreen> {
                               Container(
                                 margin: EdgeInsets.only(right: 200),
                                 decoration: BoxDecoration(
-                                  color: Colors.white, // Background color for the TextFormField
-                                  borderRadius: BorderRadius.circular(5), // Rounded corners
+                                  color: Colors
+                                      .white, // Background color for the TextFormField
+                                  borderRadius: BorderRadius.circular(
+                                      5), // Rounded corners
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black26, // Shadow color
                                       blurRadius: 5, // Blur radius
-                                      offset: Offset(0, 2), // Offset in x and y direction
+                                      offset: Offset(
+                                          0, 2), // Offset in x and y direction
                                     ),
                                   ],
                                 ),
                                 child: TextFormField(
                                   decoration: InputDecoration(
                                     hintText: '77017',
-                                    hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey.withOpacity(0.5)),
                                     border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10), // Rounded corners for the TextFormField
+                                      borderRadius: BorderRadius.circular(
+                                          10), // Rounded corners for the TextFormField
                                       borderSide: BorderSide.none, // No border
                                     ),
-                                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Padding inside the TextFormField
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                        vertical:
+                                            12.0), // Padding inside the TextFormField
                                   ),
                                 ),
                               ),
@@ -257,9 +300,9 @@ class _AccountScreenState extends State<AccountScreen> {
                                   ),
                                   SizedBox(width: 20),
                                   InkWell(
-                                    onTap: (){
+                                    onTap: () {
                                       setState(() {
-                                        userFullNname= fullName.text;
+                                        userFullNname = fullName.text;
                                       });
                                     },
                                     child: Container(
@@ -320,4 +363,3 @@ class _AccountScreenState extends State<AccountScreen> {
     );
   }
 }
-

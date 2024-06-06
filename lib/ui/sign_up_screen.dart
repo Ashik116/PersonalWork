@@ -53,7 +53,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               shadowColor: Colors.black,
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100), // Match the Card's shape
+                                borderRadius: BorderRadius.circular(
+                                    100), // Match the Card's shape
                               ),
                               child: Container(
                                 width: 121.53,
@@ -90,7 +91,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     height: 38,
                   ),
-                  Card(elevation:5 ,
+                  Card(
+                    elevation: 5,
                     shadowColor: Colors.black,
                     child: CustomTexFormField(
                       fillColor: Colors.white,
@@ -139,7 +141,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     height: 19,
                   ),
-
                   Card(
                     elevation: 5,
                     shadowColor: Colors.black,
@@ -150,7 +151,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       textInputAction: TextInputAction.done,
                       textInputType: TextInputType.visiblePassword,
                       suffix: GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             _obscureTextPassword = !_obscureTextPassword;
                           });
@@ -193,9 +194,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       textInputAction: TextInputAction.done,
                       textInputType: TextInputType.visiblePassword,
                       suffix: GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
-                            _obscureTextConfirmPassword = !_obscureTextConfirmPassword;
+                            _obscureTextConfirmPassword =
+                                !_obscureTextConfirmPassword;
                           });
                         },
                         child: Container(
@@ -230,22 +232,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: _loading
                         ? null
                         : () async {
-                      if (_globalKey.currentState!.validate()) {
-                        setState(() {
-                          _loading = true;
-                        });
-                        await registerUser(
-                            name.text, email.text, password.text);
-                        setState(() {
-                          _loading = false;
-                        });
-                      }
-                    },
+                            if (_globalKey.currentState!.validate()) {
+                              setState(() {
+                                _loading = true;
+                              });
+                              await registerUser(
+                                  name.text, email.text, password.text);
+                              setState(() {
+                                _loading = false;
+                              });
+                            }
+                          },
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)), // Change the height here
+                      minimumSize: MaterialStateProperty.all(
+                          Size(double.infinity, 50)), // Change the height here
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10), // Set the radius to 0 for a rectangular button
+                          borderRadius: BorderRadius.circular(
+                              10), // Set the radius to 0 for a rectangular button
                         ),
                       ),
                       backgroundColor: MaterialStateProperty.all(
@@ -254,20 +258,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     child: _loading
                         ? SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: CircularProgressIndicator(
-                        color: Colors.black,
-                        strokeWidth: 2.0,
-                      ),
-                    )
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator(
+                              color: Colors.black,
+                              strokeWidth: 2.0,
+                            ),
+                          )
                         : Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                      ),
-                    ),
+                            "Sign Up",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
                   ),
                   SizedBox(
                     height: 40,
@@ -278,15 +282,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       CustomIconButton(
                         height: 56,
                         width: 56,
-
-                        child: Image.asset("assets/fb.png",fit: BoxFit.fill,),
+                        child: Image.asset(
+                          "assets/fb.png",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 14),
                         child: CustomIconButton(
-                            height: 56,
-                            width: 56,
-                            child: Image.asset('assets/google.png',fit: BoxFit.fill,),),
+                          height: 56,
+                          width: 56,
+                          child: Image.asset(
+                            'assets/google.png',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -294,8 +304,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     height: 52,
                   ),
                   InkWell(
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (_)=>SignINScreen()));
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => SignINScreen()));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -368,7 +379,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
         } else {
           // Registration failed
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Failed to register user: ${newResponse.statusCode}')),
+            SnackBar(
+                content:
+                    Text('Failed to register user: ${newResponse.statusCode}')),
           );
           print('Response body: ${newResponse.body}');
         }
@@ -380,7 +393,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     } else {
       // Registration failed
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to register user: ${response.statusCode}')),
+        SnackBar(
+            content: Text('Failed to register user: ${response.statusCode}')),
       );
       print('Response body: ${response.body}');
     }

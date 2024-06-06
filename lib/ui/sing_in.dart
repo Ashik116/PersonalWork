@@ -1,4 +1,3 @@
-
 import 'package:dokan/ui/sign_up_screen.dart';
 import 'package:dokan/widget/custom_icon_Button.dart';
 import 'package:dokan/widget/custom_text_form_field.dart';
@@ -17,8 +16,8 @@ class SignINScreen extends StatefulWidget {
 }
 
 class _SignINScreenState extends State<SignINScreen> {
-  TextEditingController email=TextEditingController();
-  TextEditingController password=TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
   final SignInApiService apiService = SignInApiService();
@@ -29,7 +28,7 @@ class _SignINScreenState extends State<SignINScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
@@ -40,34 +39,48 @@ class _SignINScreenState extends State<SignINScreen> {
             key: _globalKey,
             child: Container(
               width: double.maxFinite,
-              padding: EdgeInsets.symmetric(horizontal: 32,vertical: 58),
+              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 58),
               child: Column(
                 children: [
-                  SizedBox(height: 54,),
+                  SizedBox(
+                    height: 54,
+                  ),
                   Image.asset("assets/dokan.png"),
-                  SizedBox(height: 84,),
-                  Text("Sign In",style: TextStyle(
-                    fontSize: 25,fontWeight: FontWeight.bold
-                  ),),
-                  SizedBox(height: 38,),
+                  SizedBox(
+                    height: 84,
+                  ),
+                  Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 38,
+                  ),
                   Card(
                     elevation: 5,
                     shadowColor: Colors.black,
                     child: CustomTexFormField(
                       fillColor: Colors.white,
                       prefix: Container(
-                        margin: EdgeInsets.fromLTRB(23,20,16,20),
-                        child: Image.asset("assets/eml.png",height: 20,width: 20,),
+                        margin: EdgeInsets.fromLTRB(23, 20, 16, 20),
+                        child: Image.asset(
+                          "assets/eml.png",
+                          height: 20,
+                          width: 20,
+                        ),
                       ),
                       controller: email,
                       hintText: "Email",
                       textInputType: TextInputType.emailAddress,
                       contentPadding: EdgeInsets.symmetric(
-                        horizontal: 30,vertical: 20,
+                        horizontal: 30,
+                        vertical: 20,
                       ),
                     ),
                   ),
-                  SizedBox(height: 19,),
+                  SizedBox(
+                    height: 19,
+                  ),
                   Card(
                     elevation: 5,
                     shadowColor: Colors.black,
@@ -78,7 +91,7 @@ class _SignINScreenState extends State<SignINScreen> {
                       textInputAction: TextInputAction.done,
                       textInputType: TextInputType.visiblePassword,
                       suffix: GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             _obscureTextPassword = !_obscureTextPassword;
                           });
@@ -92,9 +105,7 @@ class _SignINScreenState extends State<SignINScreen> {
                           ),
                         ),
                       ),
-                      suffixConstraints: BoxConstraints(
-                          maxHeight: 2
-                      ),
+                      suffixConstraints: BoxConstraints(maxHeight: 2),
                       prefix: Container(
                         margin: EdgeInsets.fromLTRB(23, 20, 16, 20),
                         child: Image.asset(
@@ -110,62 +121,95 @@ class _SignINScreenState extends State<SignINScreen> {
                       contentPadding: EdgeInsets.symmetric(vertical: 19),
                     ),
                   ),
-                  SizedBox(height: 18,),
+                  SizedBox(
+                    height: 18,
+                  ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Text("Forget Password?",style: TextStyle(
-                      fontSize: 13,
-                    ),),
+                    child: Text(
+                      "Forget Password?",
+                      style: TextStyle(
+                        fontSize: 13,
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 59,),
+                  SizedBox(
+                    height: 59,
+                  ),
                   ElevatedButton(
-                    onPressed:_loading ? null : () async {
-                     authenticate(context);
-                    },
+                    onPressed: _loading
+                        ? null
+                        : () async {
+                            authenticate(context);
+                          },
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)), // Change the height here
+                      minimumSize: MaterialStateProperty.all(
+                          Size(double.infinity, 50)), // Change the height here
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10), // Set the radius to 0 for a rectangular button
+                          borderRadius: BorderRadius.circular(
+                              10), // Set the radius to 0 for a rectangular button
                         ),
                       ),
-                      backgroundColor: MaterialStateProperty.all(Color(0xFFF75F55),), // Change the color here
+                      backgroundColor: MaterialStateProperty.all(
+                        Color(0xFFF75F55),
+                      ), // Change the color here
                     ),
-                    child: _loading ? Container(
-                      height: 15,width: 15,
-                      child: Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                    ):Text("Login",style: TextStyle(
-                      color: Colors.black,fontSize: 20,
-                    ),),
-                    ),
-                  SizedBox(height: 40,),
+                    child: _loading
+                        ? Container(
+                            height: 15,
+                            width: 15,
+                            child: Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                          )
+                        : Text(
+                            "Login",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomIconButton(
                         height: 56,
                         width: 56,
-
-                        child: Image.asset("assets/fb.png",fit: BoxFit.fill,),
+                        child: Image.asset(
+                          "assets/fb.png",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 14),
                         child: CustomIconButton(
                           height: 56,
                           width: 56,
-                          child: Image.asset('assets/google.png',fit: BoxFit.fill,),),
+                          child: Image.asset(
+                            'assets/google.png',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 52,),
-                  GestureDetector(child: Text("Create New Account",),
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>SignUpScreen()));
-                  },
+                  SizedBox(
+                    height: 52,
                   ),
-
+                  GestureDetector(
+                    child: Text(
+                      "Create New Account",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => SignUpScreen()));
+                    },
+                  ),
                 ],
               ),
             ),
@@ -183,7 +227,8 @@ class _SignINScreenState extends State<SignINScreen> {
       print('Email: ${email.text}');
       print('Password: ${password.text}');
 
-      final response = await apiService.authenticateUser(email.text, password.text);
+      final response =
+          await apiService.authenticateUser(email.text, password.text);
 
       setState(() {
         _loading = false; // Hide loading animation
@@ -205,5 +250,4 @@ class _SignINScreenState extends State<SignINScreen> {
       print('Error: $e');
     }
   }
-
 }

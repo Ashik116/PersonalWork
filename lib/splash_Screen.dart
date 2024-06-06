@@ -13,7 +13,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   var isSplashing = true;
 
-  void getData() async {
+  void checkConnection() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
 
     if (connectivityResult == ConnectivityResult.mobile ||
@@ -65,15 +65,15 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context); // Close the dialog
-                      getData(); // Retry getting data
+                      Navigator.pop(context);
+                      checkConnection(); // Retry getting data
                     },
                     child: Text("Retry"),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {
-                      Navigator.pop(context); // Close the dialog
+                      Navigator.pop(context);
                     },
                     child: Text("Cancel"),
                   ),
@@ -89,8 +89,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-    getData();
-    //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CheckLogIn()));
+    checkConnection();
   }
 
   @override
@@ -136,20 +135,15 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         loginErrorMessage.toString(),
         style: TextStyle(color: Colors.red),
       ),
-      // action: SnackBarAction(
-      //   label: 'Undo',
-      //   onPressed: () {
-      //     // Some code to undo the change.
-      //   },
-      // ),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    //_scaffoldKey.currentState.showSnackBar(snackBar);
   }
 
   void refresh() {
     if (mounted) {
-      setState(() {});
+      setState(() {
+        checkConnection();
+      });
     }
   }
 }

@@ -60,7 +60,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
             padding: const EdgeInsets.all(10.0),
             child: Icon(Icons.search, color: Colors.black),
           ),
-
         ],
       ),
       body: Stack(
@@ -185,7 +184,8 @@ class StylishCard extends StatelessWidget {
               ),
               child: product.imageUrl.isNotEmpty
                   ? CachedNetworkImage(
-                      imageUrl: product.imageUrl,fit: BoxFit.fill,
+                      imageUrl: product.imageUrl,
+                      fit: BoxFit.fill,
                       placeholder: (context, url) =>
                           Center(child: CircularProgressIndicator()),
                       errorWidget: (context, url, error) => Center(

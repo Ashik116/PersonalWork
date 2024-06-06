@@ -26,7 +26,8 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
         ListTile(
           leading: widget.leading,
           title: widget.title,
-          trailing: Icon(_isExpanded ? Icons.arrow_drop_up : Icons.arrow_forward_ios),
+          trailing:
+              Icon(_isExpanded ? Icons.arrow_drop_up : Icons.arrow_forward_ios),
           onTap: () {
             setState(() {
               _isExpanded = !_isExpanded;
@@ -35,11 +36,11 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
         ),
         _isExpanded
             ? Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: widget.children,
-          ),
-        )
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: widget.children,
+                ),
+              )
             : Container(),
       ],
     );

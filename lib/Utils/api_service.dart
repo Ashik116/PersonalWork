@@ -5,10 +5,10 @@ import 'package:http/http.dart' as http;
 import '../Model/response_model.dart';
 
 class SignInApiService {
-
-
-  Future<Map<String, dynamic>> authenticateUser(String username, String password) async {
-    final String _baseUrl = 'https://apptest.dokandemo.com/wp-json/jwt-auth/v1/token';
+  Future<Map<String, dynamic>> authenticateUser(
+      String username, String password) async {
+    final String _baseUrl =
+        'https://apptest.dokandemo.com/wp-json/jwt-auth/v1/token';
     final url = Uri.parse(_baseUrl);
 
     final response = await http.post(
@@ -30,18 +30,18 @@ class SignInApiService {
   }
 
   Future<List<Product>> fetchProducts() async {
-    final String response = await rootBundle.loadString('assets/response/response.json');
+    final String response =
+        await rootBundle.loadString('assets/response/response.json');
     // List<dynamic> jsonList = json.decode(response);
     // return Product.fromJsonList(jsonList);
     List<dynamic> body = json.decode(response);
-    List<Product> products = body.map((dynamic item) => Product.fromJson(item)).toList();
+    List<Product> products =
+        body.map((dynamic item) => Product.fromJson(item)).toList();
     return products;
   }
 
-
-
-
-  Future<void> registerUser(String username, String email, String password) async {
+  Future<void> registerUser(
+      String username, String email, String password) async {
     final url = 'http://apptest.dokandemo.com/wp-json/wp/v2/users/register';
 
     final response = await http.post(
