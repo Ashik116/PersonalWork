@@ -4,7 +4,6 @@ import 'package:dokan/ui/sing_in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class SplashScreenPage extends StatefulWidget {
   @override
   _SplashScreenPageState createState() => _SplashScreenPageState();
@@ -13,9 +12,6 @@ class SplashScreenPage extends StatefulWidget {
 class _SplashScreenPageState extends State<SplashScreenPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   var isSplashing = true;
-
-
-
 
   void getData() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
@@ -38,8 +34,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
           context,
           MaterialPageRoute(builder: (context) => SignINScreen()),
         );
-
-
       } catch (e) {
         // Handle exceptions if any...
       }
@@ -49,8 +43,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     }
   }
 
-
-
   void showInternetDialog() {
     showDialog(
       context: context,
@@ -59,7 +51,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
           title: Row(
             children: [
               Text("No Internet Connection"),
-              Icon(Icons.signal_wifi_connected_no_internet_4, color: Colors.red),
+              Icon(Icons.signal_wifi_connected_no_internet_4,
+                  color: Colors.red),
             ],
           ),
           content: Column(
@@ -88,14 +81,10 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               ),
             ],
           ),
-
         );
       },
     );
   }
-
-
-
 
   @override
   void initState() {
@@ -109,32 +98,34 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     return !isSplashing
         ? Container()
         : Scaffold(
-      key: _scaffoldKey,
-      body: Container(
-        color: Colors.white,
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 100),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    FadeInRight( duration: Duration(milliseconds: 800),
-                        child: Image.asset(
-                          "assets/dokan.png",
-                          height: 150,
-                          width: 150,)),
-                  ],
-                ),
+            key: _scaffoldKey,
+            body: Container(
+              color: Colors.white,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 100),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FadeInRight(
+                              duration: Duration(milliseconds: 800),
+                              child: Image.asset(
+                                "assets/dokan.png",
+                                height: 150,
+                                width: 150,
+                              )),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
+          );
   }
 
   void snackBarMsg(loginErrorMessage) {

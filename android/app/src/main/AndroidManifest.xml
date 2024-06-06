@@ -4,7 +4,7 @@
 
 
     <application
-        android:label="dokan"
+        android:label="Dokan"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

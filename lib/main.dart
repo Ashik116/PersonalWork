@@ -1,5 +1,4 @@
 import 'package:dokan/splash_Screen.dart';
-import 'package:dokan/test.dart';
 import 'package:dokan/ui/sing_in.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Dokan',
-      home:  SplashScreenPage(),
+      home: SplashScreenPage(),
     );
   }
 }
-
-

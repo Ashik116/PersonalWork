@@ -3,7 +3,6 @@ import 'package:dokan/ui/productListScreen.dart';
 import 'package:dokan/ui/profile_Screen.dart';
 import 'package:flutter/material.dart';
 
-import '../test.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   @override
@@ -50,7 +49,6 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
               height: 56,
               child: Image.asset(
                 "assets/NavigationBar/search.png",
-                height: 26,
               ),
             ),
             Container(
